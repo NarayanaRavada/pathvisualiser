@@ -33,7 +33,6 @@ class PathFindingVisualliser extends Component {
 
   handleMouseDown(row, col) {
     const { grid } = this.state;
-    console.log(this.state);
     const newGrid = nodeWallToggle(grid, row, col);
     this.setState({ grid: newGrid, mouseIsPressed: true });
   }
@@ -122,7 +121,6 @@ class PathFindingVisualliser extends Component {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const endNode = grid[END_NODE_ROW][END_NODE_COL];
     const { visitedInOrder, path } = Bfs(grid, startNode, endNode);
-    console.log(path);
     if (path == null) {
       alert("No Path found");
       return;
